@@ -16,12 +16,12 @@ class BankAccount(AbstractAccount):
         if amount <= 0:
             raise InvalidOperationError("сумм должн быть положительной")
         return True
-    
+        
     def _validate_status(self):
         if self._status == AccountStatus.FROZEN:
-            raise AccountFrozenError(f"Счет {self._account_id} заморожен")
+            raise AccountFrozenError(f"cчет {self._account_id} заморожен")
         if self._status == AccountStatus.CLOSED:
-            raise AccountClosedError(f"Счет {self._account_id} закрыт")
+            raise AccountClosedError(f"cчет {self._account_id} закрыт")
         return True
     
     def deposit(self, amount):
